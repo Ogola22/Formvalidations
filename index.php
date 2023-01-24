@@ -1,4 +1,5 @@
 <?php include("dbh.php")?>
+<?php include("header.php")?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,37 +89,37 @@ if(isset($_POST['save'])){
 ?>
 <body>
     <div class="col-md-4 offset-md-4">
-        <h5 style="color: blue;">Enter Details</h5>
+        <h5 style="color: blue; margin-top: 30px; ">Enter Details</h5>
       <form action="index.php" method="POST">
          
               <div class="form-group">
-                 <label>firstname</label><br>
+                 <label>Firstname</label><br>
                  <input type="text" placeholder=" enter firstname" name="firstname" class="form-control"
                  value="<?php echo htmlspecialchars($firstname);?>"><br>
                  <div class='text-danger'><?php echo $errors['firstname']?></div>
 
               </div>     
               <div class="form-group">
-                 <label>lastname</label><br>
+                 <label>Lastname</label><br>
                  <input type="text"  placeholder=" enter lastname" name="lastname" class="form-control"
                  value="<?php echo $lastname?>"><br>
                  <div class='text-danger'><?php echo $errors['lastname']?></div>
 
               </div>
               <div class="form-group">
-                 <label>email</label><br>
+                 <label>Email</label><br>
                  <input type="text" placeholder=" enter your email here " name="email"  class="form-control"
                  value="<?php echo $email?>"><br>
                  <div class='text-danger'><?php echo $errors['email']?></div>
               </div>
               <div class="form-group">
-                 <label>course</label><br>
+                 <label>Course</label><br>
                  <input type="text"  placeholder=" enter firstname"name="course"  class="form-control"
                  value="<?php echo $course?>"><br>
                  <div class='text-danger'><?php echo $errors['course']?></div>
               </div>
 
-              <button name="save" class="btn btn-primary"> save details</button>
+              <button name="save" class="btn btn-primary">Save details</button>
       </form>
     </div>
 </body>
