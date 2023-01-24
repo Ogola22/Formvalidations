@@ -9,11 +9,11 @@
    
 </head>
 <body>
-<div class="card text-center">
+<div class="card text-center mt-4 badge-dark">
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="true" href="index.php">Home</a>
+        <a class="nav-link href="details.php">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="signup.php">Sign up</a>

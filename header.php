@@ -9,12 +9,12 @@
    
 </head>
 <body>
-<ul class="nav justify-content-center border-bottom p-2 background-color alert-primary">
+<ul class="nav justify-content-center border-bottom p-2 background-color alert-border-primary font-weight-bold">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">PROJECT</a>
+    <a class="nav-link active" aria-current="page" href="index.php">PROJECT</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="index.php">Home</a>
+    <a class="nav-link" href="details.php">Home</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="signup.php">Sign Up</a>
