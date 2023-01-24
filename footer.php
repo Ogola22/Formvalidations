@@ -9,24 +9,11 @@
    
 </head>
 <body>
-<div class="card text-center mt-4 badge-dark">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-        <a class="nav-link href="details.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="signup.php">Sign up</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="login.php">Login</a>
-      </li>
-    </ul>
-  </div>
+<div class="card text-center badge-dark mt-4">
   <div class="card-body">
     <h5 class="card-title">Registration Project</h5>
-    <p class="card-text">Collecting user input and saving to the database</p>
-    <a href="#" class="btn btn-primary">Let's see more</a>
+    <p class=" card-text">Collecting user input and saving to the database</p>
+    <a href="details.php" class="btn btn-primary mb-2">Let's see more</a>
   </div>
 </div>
 </body>
