@@ -70,4 +70,5 @@ if(isset($_POST['save'])){
       </form>
 </div>
 </body>
+<?php include("footer.php")?>
 </html>

@@ -1,5 +1,6 @@
 <?php include("dbh.php")?>
 <?php include("header.php")?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,4 +124,5 @@ if(isset($_POST['save'])){
       </form>
     </div>
 </body>
+<?php include("footer.php")?>
 </html>
