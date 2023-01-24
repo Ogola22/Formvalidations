@@ -1,3 +1,4 @@
+<?php include("dbh.php")?>
 <?php include("header.php")?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +43,27 @@ if(isset($_POST['save'])){
             VALUES($firstname,$lastname,$email,$course)");
             $statement ->execute();
         ) */
+    }
+    try
+        {
+            $query = "INSERT INTO signupTB(email, password) VALUES(:email, :password)";
+            $query_run = $databaseConnection -> prepare($query);
+            $data =[
+                ":email" => $email,
+                ":password" => $password,
+                
+            ];
+            $query_execute = $query_run -> execute($data);
+            if($query_execute){
+                echo '<script> alert("Data added successfully")</script>';
+            }else{
+                echo '<script> alert("Data NOT added")</script>';
+            }
+            
+        }catch(PDOException $err){
+            echo $err -> getMessage();
+        }
+    
     }
 }
 ?>

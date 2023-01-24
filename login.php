@@ -1,3 +1,4 @@
+<?php include("dbh.php")?>
 <?php include("header.php")?>
 <!DOCTYPE html>
 <html lang="en">
