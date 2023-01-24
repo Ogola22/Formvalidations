@@ -9,7 +9,7 @@
    
 </head>
 <body>
-<ul class="nav justify-content-center border-bottom p-2 background-color alert-border-primary font-weight-bold">
+<ul class="nav justify-content-center border-bottom p-2 bg-dark font-weight-bold fixed-top">
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="index.php">PROJECT</a>
   </li>
