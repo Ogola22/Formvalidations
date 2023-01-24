@@ -64,7 +64,7 @@ if(isset($_POST['save'])){
             echo $err -> getMessage();
         }
     
-    }
+    
 }
 ?>
 <body>
