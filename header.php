@@ -17,7 +17,7 @@
   <a class="navbar-brand" href="#">About</a>
   </div>
   <div class="container-sm justify-content-end">
-  <a class="navbar-brand" href="#">Contact</a>
+  <a class="navbar-brand" href="contact.php">Contact</a>
   </div>
 </nav>
 <div class="nav justify-content-center">
