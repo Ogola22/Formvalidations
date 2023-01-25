@@ -13,10 +13,10 @@
   <div class="container-md">
     <h4 style="color:coral;">SavanahDevs</h4>
   </div>
-  <div class="container-md justify-content-end ">
+  <div class="container-sm justify-content-end ">
   <a class="navbar-brand" href="#">About</a>
   </div>
-  <div class="container-md justify-content-end">
+  <div class="container-sm justify-content-end">
   <a class="navbar-brand" href="#">Contact</a>
   </div>
 </nav>
