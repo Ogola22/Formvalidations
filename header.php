@@ -9,9 +9,21 @@
    
 </head>
 <body>
-<ul class="nav justify-content-center border-bottom p-2 bg-dark font-weight-bold">
+<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom p-2">
+  <div class="container-md">
+    <h4 style="color:coral;">SavanahDevs</h4>
+  </div>
+  <div class="container-md justify-content-end ">
+  <a class="navbar-brand" href="#">About Us</a>
+  </div>
+  <div class="container-md justify-content-end">
+  <a class="navbar-brand" href="#">Contact us</a>
+  </div>
+</nav>
+<div class="nav justify-content-center">
+<ul class="nav justify-content-center border-bottom p-0 bg-light font-weight-bold">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="index.php">PROJECT</a>
+    <a class="nav-link active" aria-current="page" href="index.php">PROJECTS</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="details.php">Home</a>
@@ -23,6 +35,8 @@
     <a class="nav-link active" aria-current="page" href="login.php">Login</a>
   </li>
 </ul>
+</div>
+
 
 </body>
 </html>

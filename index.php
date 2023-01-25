@@ -10,7 +10,20 @@
    
 </head>
 <body>
-<div class="card-group">
+<div class="container text-center mt-4">
+  <div class="row">
+    <div class="col align-self-start h3 alert-primary">
+      Savanah
+    </div>
+    <div class="col align-self-center h3 alert-secondary">
+      Software
+    </div>
+    <div class="col align-self-end h3 alert-info">
+      Developers
+    </div>
+  </div>
+</div>
+<div class="card-group mt-4 ">
   <div class="card">
     <img src="./images/20230125050607_IMG_0294.JPG" class="card-img-top" alt="...">
     <div class="card-body">
