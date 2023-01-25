@@ -13,7 +13,7 @@
   <div class="card-body">
     <h5 class="card-title">Registration Project</h5>
     <p class=" card-text">Collecting user input and saving to the database</p>
-    <a href="details.php" class="btn btn-primary mb-2">Let's see more</a>
+    <a href="home.php" class="btn btn-primary mb-2">Let's see more</a>
   </div>
 </div>
 </body>

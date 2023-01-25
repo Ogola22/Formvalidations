@@ -1,3 +1,4 @@
+<?php include("dbh.php")?>
 <?php include("header.php")?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,46 +10,118 @@
     <link rel="stylesheet" href="./bootstrap-4.6.2-dist/css/bootstrap.min.css ">
    
 </head>
+<?php
+$firstname=$lastname=$email=$course='';
+$errors=array('firstname'=>'','lastname'=>'','email'=>'','course'=>'');
+if(isset($_POST['save'])){
+    //checking for firstname validation
+    if(empty($_POST['firstname'])){
+        $errors['firstname']='firstname cannot be empty<br/>';
+    }else{
+        $firstname=$_POST['firstname'];
+        if(!preg_match('/^[a-zA-Z\s]+$/',$firstname)){
+            $errors['firstname']='firstname must be letters and spaces only';
+        }
+
+    }
+     //checking for lastname validation
+     if(empty($_POST['lastname'])){
+        $errors['lastname'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ]='lastname cannot be empty<br/>';
+    }else{
+        $lastname=$_POST['lastname'];
+        if(!preg_match('/^[a-zA-Z\s]+$/',$lastname)){
+            $errors['lastname']='lastname must be letters and spaces only';
+        }
+
+    }
+     //checking for course validation
+     if(empty($_POST['course'])){
+        $errors['course']='coursename cannot be empty<br/>';
+    }else{
+        $course=$_POST['course'];
+        if(!preg_match('/^[a-zA-Z\s]+$/',$course)){
+            $errors['course']='course must be letters and spaces only';
+        }
+
+    }
+     //checking for email validation
+     if(empty($_POST['email'])){
+        $errors['email']='email cannot be empty<br/>';
+    }else{
+        $email=$_POST['email'];
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $errors['email']='email must be a valid address';
+        }
+
+    }
+    if(array_filter($errors)){
+        //echo 'There are Errors in the form';
+    }else{
+        //echo 'No errors in the form';
+        /*$statement = $databaseConnection ->prepare(
+            "INSERT INTO details(firstname,lastname,email,course)
+            VALUES($firstname,$lastname,$email,$course)");
+            $statement ->execute();
+        ) */
+        try
+        {
+            $query = "INSERT INTO sdetails(firstname, lastname, email, course) VALUES(:firstname, :lastname, :email, :course)";
+            $query_run = $databaseConnection -> prepare($query);
+            $data =[
+                ":firstname" => $firstname,
+                ":lastname" => $lastname,
+                ":email" => $email,
+                ":course" => $course,
+            ];
+            $query_execute = $query_run -> execute($data);
+            if($query_execute){
+                echo '<script> alert("Data added successfully")</script>';
+            }else{
+                echo '<script> alert("Data NOT added")</script>';
+            }
+            
+        }catch(PDOException $err){
+            echo $err -> getMessage();
+        }
+    
+    }
+}
+?>
 <body>
-<div class="container text-center mt-4">
-  <div class="row">
-    <div class="col align-self-start h3 alert-primary">
-      Savanah
+    <div class="col-md-4 offset-md-4 flex-fill">
+        <h5 style="color: blue; margin-top: 30px; ">Enter Details</h5>
+      <form action="index.php" method="POST">
+         
+              <div class="form-group">
+                 <label>Firstname</label><br>
+                 <input type="text" placeholder=" enter firstname" name="firstname" class="form-control"
+                 value="<?php echo htmlspecialchars($firstname);?>"><br>
+                 <div class='text-danger'><?php echo $errors['firstname']?></div>
+
+              </div>     
+              <div class="form-group">
+                 <label>Lastname</label><br>
+                 <input type="text"  placeholder=" enter lastname" name="lastname" class="form-control"
+                 value="<?php echo $lastname?>"><br>
+                 <div class='text-danger'><?php echo $errors['lastname']?></div>
+
+              </div>
+              <div class="form-group">
+                 <label>Email</label><br>
+                 <input type="text" placeholder=" enter your email here " name="email"  class="form-control"
+                 value="<?php echo $email?>"><br>
+                 <div class='text-danger'><?php echo $errors['email']?></div>
+              </div>
+              <div class="form-group">
+                 <label>Course</label><br>
+                 <input type="text"  placeholder=" enter firstname"name="course"  class="form-control"
+                 value="<?php echo $course?>"><br>
+                 <div class='text-danger'><?php echo $errors['course']?></div>
+              </div>
+
+              <button name="save" class="btn btn-primary">Save details</button>
+      </form>
     </div>
-    <div class="col align-self-center h3 alert-secondary">
-      Software
-    </div>
-    <div class="col align-self-end h3 alert-info">
-      Developers
-    </div>
-  </div>
-</div>
-<div class="card-group mt-4 ">
-  <div class="card">
-    <img src="./images/20230125050607_IMG_0294.JPG" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Team work</h5>
-      <p class="card-text">We learn by bringing ideas into action by helping others solve their problems.</p>
-      <p class="card-text"><small class="text-muted">May 2022 Full-stack class</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="./images/20230125052239_IMG_0329.JPG" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Ladies in Tech</h5>
-      <p class="card-text">A lot a ladies are penetrating into the tech industry and we expect more ladies to join IST.</p>
-      <p class="card-text"><small class="text-muted">Virginia</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="./images/20230125052424_IMG_0333.JPG" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Pool time!</h5>
-      <p class="card-text">After a serius sesssion of coding, we need to refresh and relax our brains. Our most enjoyed game.</p>
-      <p class="card-text"><small class="text-muted">Game manager, Mahad</small></p>
-    </div>
-  </div>
-</div>
 </body>
 <?php include("footer.php")?>
 </html>

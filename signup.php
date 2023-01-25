@@ -55,9 +55,9 @@ if(isset($_POST['save'])){
             ];
             $query_execute = $query_run -> execute($data);
             if($query_execute){
-                echo '<script> alert("Data added successfully")</script>';
+                echo '<script> alert("Signup successful")</script>';
             }else{
-                echo '<script> alert("Data NOT added")</script>';
+                echo '<script> alert("Something went wrong, please try again..")</script>';
             }
             
         }catch(PDOException $err){

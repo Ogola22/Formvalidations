@@ -23,10 +23,10 @@
 <div class="nav justify-content-center">
 <ul class="nav justify-content-center border-bottom p-0 bg-light font-weight-bold">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="index.php">PROJECTS</a>
+    <a class="nav-link active" aria-current="page" href="home.php">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="details.php">Home</a>
+    <a class="nav-link" href="index.php">Details</Details></a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="signup.php">Sign Up</a>
