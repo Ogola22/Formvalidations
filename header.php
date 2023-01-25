@@ -14,10 +14,10 @@
     <h4 style="color:coral;">SavanahDevs</h4>
   </div>
   <div class="container-md justify-content-end ">
-  <a class="navbar-brand" href="#">About Us</a>
+  <a class="navbar-brand" href="#">About</a>
   </div>
   <div class="container-md justify-content-end">
-  <a class="navbar-brand" href="#">Contact us</a>
+  <a class="navbar-brand" href="#">Contact</a>
   </div>
 </nav>
 <div class="nav justify-content-center">
