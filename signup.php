@@ -13,14 +13,14 @@
 <?php
 $email=$password='';
 $errors=array('email'=>'','password'=>'');
-if(isset($_POST['save'])){
+if(isset($_POST['submit'])){
     //checking for username validation
     if(empty($_POST['email'])){
         $errors['email']='email cannot be empty<br/>';
     }else{
         $email=$_POST['email'];
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $errors['email']='email must be a valid address';
+            $errors['email']='Email must be a valid address';
         }
 
     }
@@ -46,7 +46,7 @@ if(isset($_POST['save'])){
     }
     try
         {
-            $query = "INSERT INTO signupTB(email, password) VALUES(:email, :password)";
+            $query = "INSERT INTO signupTB(email, password) VALUES(:email, :password);";
             $query_run = $databaseConnection -> prepare($query);
             $data =[
                 ":email" => $email,
@@ -87,7 +87,7 @@ if(isset($_POST['save'])){
                  <div class='text-danger'><?php echo $errors['password']?></div>
 
               </div>
-              <button name="save" class="btn btn-primary">Sign up</button>
+              <button name="submit" class="btn btn-primary">Sign up</button>
       </form>
 </div>
 </body>
