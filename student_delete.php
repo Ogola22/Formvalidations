@@ -1,6 +1,5 @@
 <?php
 include('dbh.php');
-include('student_edit.php');
 
 if(isset($_POST['student_delete'])){
     $student_id = $_POST['student_delete'];
@@ -9,14 +8,14 @@ if(isset($_POST['student_delete'])){
         $query = "DELETE FROM sdetails WHERE id=id";
         $statement =$databaseConnection->prepare($query);
         $data =[
-            ':id' =>$id
+            ':id' =>$$student_id
         ];
         $statement->execute($data);
 
         $query_execute = $statement->execute($data);
 
         if($query_execute){
-            header('Location:index.php');
+            header('Location:students.php');
         }else{
 
         }

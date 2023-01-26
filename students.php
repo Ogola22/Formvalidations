@@ -44,7 +44,7 @@ include('header.php');
                 </td>
                  <td> 
                     <form action="crud.php" method="POST">
-                        <button value="<?=$row['id']; ?>" class="btn btn-danger btn-sm" name="delete_student">Delete</button>
+                        <button value="<?=$row['id']; ?>" class="btn btn-danger btn-sm" name="student_delete">Delete</button>
                     </form>
                 </td> 
             </tr>
