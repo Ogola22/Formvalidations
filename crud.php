@@ -16,7 +16,7 @@ if (isset($_POST["update_student"])){
     $course = $_POST['course'];
 
     try{
-        $query = "UPDATE sample SET firstname=:firstname, lastname=:lastname, email=:email, course=:course WHERE Id=:stud_id";
+        $query = "UPDATE sdetails SET firstname=:firstname, lastname=:lastname, email=:email, course=:course WHERE Id=:stud_id";
         $statement = $databaseConnection->prepare($query);
         $data =[
             ':firstname' => $firstname,

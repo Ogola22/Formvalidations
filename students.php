@@ -1,8 +1,6 @@
 <?php
 include("dbh.php");
 include('header.php');
-include('student_edit.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +40,7 @@ include('student_edit.php');
                 <td><?=$row['email'];?></td>
                 <td><?=$row['course'];?></td>
                 <td>
-                    <a href="student-edit.php?Id=<?=$row['id']; ?>" class="btn btn-primary" name="Edit_students">Edit</a>
+                    <a href="student_edit.php?id=<?=$row['id']; ?>" class="btn btn-primary" name="Edit_students">Edit</a>
                 </td>
                  <td> 
                     <form action="crud.php" method="POST">

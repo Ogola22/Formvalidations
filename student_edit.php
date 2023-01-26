@@ -1,7 +1,5 @@
 <?php
 include('dbh.php');
-include('crud.php');
-include('students.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,15 +8,14 @@ include('students.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./bootstrap-4.6.2-dist/css/bootstrap.min.css">
 </head>
 <?php
 
-if (isset($_GET['Id'])){
-    $student_id = $_GET['Id'];
+if (isset($_GET['id'])){
+    $student_id = $_GET['id'];
 
-    $query = "SELECT * FROM students WHERE Id=:id LIMIT 1";
+    $query = "SELECT * FROM sdetails WHERE id=:id LIMIT 1";
     $statement = $databaseConnection->prepare($query);
     $data = [':id' => $student_id];
     $statement->execute($data);
@@ -30,7 +27,7 @@ if (isset($_GET['Id'])){
 <div class="col-md-4 offset-md-4">
 <h5 class="headings">Enter student details</h5>
 <form action="crud.php" method="POST">
-    <input type="hidden" name="student_id" value="<?=$result['Id'];?>">
+    <input type="hidden" name="student_id" value="<?=$result['id'];?>">
 
     <div class="form-group">
         <input type="text" name="firstname" placeholder="Enter firstname" class="form-control" value="<?=$result['firstname']; ?>">
