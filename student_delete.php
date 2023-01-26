@@ -7,7 +7,7 @@ if(isset($_POST['student_delete'])){
 
     try{
         $query = "DELETE FROM sdetails WHERE id=id";
-        $statement =$databaseConnection-> repare($query);
+        $statement =$databaseConnection->prepare($query);
         $data =[
             ':id' =>$id
         ];
