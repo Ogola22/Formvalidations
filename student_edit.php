@@ -1,5 +1,7 @@
 <?php
 include('dbh.php');
+include('crud.php');
+include('students.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +18,9 @@ include('dbh.php');
 if (isset($_GET['Id'])){
     $student_id = $_GET['Id'];
 
-    $query = "SELECT * FROM sample WHERE Id=:std_id LIMIT 1";
+    $query = "SELECT * FROM students WHERE Id=:id LIMIT 1";
     $statement = $databaseConnection->prepare($query);
-    $data = [':std_id' => $student_id];
+    $data = [':id' => $student_id];
     $statement->execute($data);
 
     $result = $statement->fetch(PDO::FETCH_ASSOC);
