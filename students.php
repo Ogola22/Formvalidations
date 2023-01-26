@@ -1,6 +1,7 @@
 <?php
 include("dbh.php");
 include('header.php');
+include('student_edit.php');
 
 ?>
 <!DOCTYPE html>
@@ -41,11 +42,11 @@ include('header.php');
                 <td><?=$row['email'];?></td>
                 <td><?=$row['course'];?></td>
                 <td>
-                    <a href="student-edit.php?Id=<?=$row['Id']; ?>" class="btn btn-primary" name="Edit_students">Edit</a>
+                    <a href="student-edit.php?Id=<?=$row['id']; ?>" class="btn btn-primary" name="Edit_students">Edit</a>
                 </td>
                  <td> 
                     <form action="crud.php" method="POST">
-                        <button value="<?=$row['Id']; ?>" class="btn btn-danger btn-sm" name="delete_student">Delete</button>
+                        <button value="<?=$row['id']; ?>" class="btn btn-danger btn-sm" name="delete_student">Delete</button>
                     </form>
                 </td> 
             </tr>
