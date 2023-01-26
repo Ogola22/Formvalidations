@@ -30,6 +30,8 @@ if (isset($_POST["update_student"])){
         }else{
             //echo '<script> alert("Data NOT added")</script>';
         }
+    }catch(PDOException $err){
+        echo $err->getMessage();
     }
 }
 ?>
