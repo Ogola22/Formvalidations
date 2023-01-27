@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
             $query_run = $databaseConnection -> prepare($query);
             $data =[
                 ":email" => $email,
-                ":password" => $password,
+                ":password" => password_hash($password, PASSWORD_BCRYPT);
                 
             ];
             $query_execute = $query_run -> execute($data);
