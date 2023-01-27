@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form</title>
     <link rel="stylesheet" href="./bootstrap-4.6.2-dist/css/bootstrap.min.css ">
+    <script src="https://kit.fontawesome.com/ba14d2c847.js" crossorigin="anonymous"></script>
    
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom p-2">
   <div class="container-md">
     <h4 style="color:coral;">SavanahDevs</h4>
+  </div>
+  <div class="icon 20">
+    <i class="fa-brands fa-whatsapp"></i>
   </div>
   <div class="container-sm justify-content-end ">
   <a class="navbar-brand" href="#">About</a>
