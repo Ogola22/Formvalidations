@@ -8,6 +8,30 @@
     <title>Document</title>
 </head>
 <?php
+if(isset($_POST["delete_student"])){
+    $student_id = $_POST['delete_student'];
+    
+
+    try{
+        $query = "DELETE FROM sdetails WHERE id=:stud_id";
+        $statement = $databaseConnection->prepare($query);
+        $data =[
+            ':stud_id' => $student_id
+            
+        ];
+        $statement->execute($data);
+
+        $query_execute = $statement->execute($data);
+        if ($query_execute){
+            header('location: students.php');
+        }else{
+            
+        }
+    }catch (PDOException $err){
+        echo $err->getMessage();
+    }
+}
+
 if (isset($_POST["update_student"])){
     $student_id = htmlspecialchars($_POST['student_id']);
     $firstname = $_POST['firstname'];
