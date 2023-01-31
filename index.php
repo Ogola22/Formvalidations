@@ -91,7 +91,7 @@ if(isset($_POST['submit'])){
 <body>
 <ul class="nav justify-content-center bg-light font-weight-bold">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="students.php">List</a>
+    <a class="nav-link active" aria-current="page" href="students.php">List of Students</a>
   </li>
 </ul>
     <div class="col-md-4 offset-md-4 flex-fill">
