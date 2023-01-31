@@ -72,7 +72,7 @@ if(isset($_POST['sign'])){
         <h5 style="color: blue; margin-top:80px;">SIGN UP here</h5>
       <form action="signup.php" method="POST">
          
-              <div class="form-group">
+      <div class="form-group">
                  <label>Username</label><br>
                  <input type="email" placeholder="Enter username" name="email" class="form-control"
                  value="<?php echo htmlspecialchars($Email);?>"><br>

@@ -11,26 +11,26 @@
    
 </head>
 <?php
-$email=$password='';
-$errors=array('email'=>'','password'=>'');
+$uaername=$pswd='';
+$errors=array('username'=>'','pswd'=>'');
 if(isset($_POST['save'])){
     //checking for username validation
-    if(empty($_POST['email'])){
-        $errors['email']='email cannot be empty<br/>';
+    if(empty($_POST['username'])){
+        $errors['username']='username cannot be empty<br/>';
     }else{
-        $email=$_POST['email'];
+        $username=$_POST['username'];
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $errors['email']='email must be a valid address';
+            $errors['username']='username must be a valid address';
         }
 
     }
      //checking for password validation
-     if(empty($_POST['password'])){
-        $errors['password'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ]='lastname cannot be empty<br/>';
+     if(empty($_POST['pswd'])){
+        $errors['pswd'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ]='lastname cannot be empty<br/>';
     }else{
-        $password=$_POST['password'];
-        if(!preg_match('/^[a-zA-Z\s]+$/',$password)){
-            $errors['password']='password must be letters and spaces only';
+        $pswd=$_POST['pswd'];
+        if(!preg_match('/^[a-zA-Z\s]+$/',$pswd)){
+            $errors['pswd']='password must be letters and spaces only';
         }
 
     }
@@ -44,6 +44,26 @@ if(isset($_POST['save'])){
             $statement ->execute();
         ) */
     }
+
+try
+        {
+            $query = "INSERT INTO login(username, pswd) VALUES(:username, :pswd);";
+            $query_run = $databaseConnection -> prepare($query);
+            $data =[
+                ":username" => $username,
+                ":psswd" => password_hash($pswd, PASSWORD_BCRYPT)
+                
+            ];
+            $query_execute = $query_run -> execute($data);
+            if($query_execute){
+                echo '<script> alert("Signup successful")</script>';
+            }else{
+                echo '<script> alert("Something went wrong, please try again..")</script>';
+            }
+            
+        }catch(PDOException $err){
+            echo $err -> getMessage();
+        }
 }
 ?>
 <body>
@@ -54,16 +74,16 @@ if(isset($_POST['save'])){
               <div class="form-group">
                  <label>Username</label><br>
                  <input type="email" placeholder="Enter username" name="email" class="form-control"
-                 value="<?php echo htmlspecialchars($email);?>"><br>
-                 <div class='text-danger'><?php echo $errors['email']?>
+                 value="<?php echo htmlspecialchars($username);?>"><br>
+                 <div class='text-danger'><?php echo $errors['username']?>
                 </div>
 
               </div>     
               <div class="form-group">
                  <label>Password</label><br>
                  <input type="password"  placeholder=" Enter password" name="password" class="form-control"
-                 value="<?php echo $password?>"><br>
-                 <div class='text-danger'><?php echo $errors['password']?></div>
+                 value="<?php echo $pswd?>"><br>
+                 <div class='text-danger'><?php echo $errors['pswd']?></div>
 
               </div>
               <button name="save" class="btn btn-primary">Login</button>
