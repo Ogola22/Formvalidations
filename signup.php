@@ -70,7 +70,7 @@ if(isset($_POST['sign'])){
 <body>
 <div class="col-md-4 offset-md-4">
         <h5 style="color: blue; margin-top:80px;">SIGN UP here</h5>
-      <form action="index.php" method="POST">
+      <form action="signup.php" method="POST">
          
               <div class="form-group">
                  <label>Username</label><br>

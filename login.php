@@ -49,7 +49,7 @@ if(isset($_POST['save'])){
 <body>
 <div class="col-md-4 offset-md-4">
         <h5 style="color: blue; margin-top:80px;">Login Here</h5>
-      <form action="index.php" method="POST">
+      <form action="login.php" method="POST">
          
               <div class="form-group">
                  <label>Username</label><br>
