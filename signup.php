@@ -75,7 +75,7 @@ if(isset($_POST['sign'])){
       <div class="form-group">
                  <label>Username</label><br>
                  <input type="email" placeholder="Enter username" name="email" class="form-control"
-                 value="<?php echo htmlspecialchars($Email);?>"><br>
+                 value="<?php echo $Email?>"><br>
                  <div class='text-danger'><?php echo $errors['Email']?>
                 </div>
 
