@@ -16,6 +16,7 @@ include('header.php');
 
     <div class="container">
         <h1 class="headings">All Students Details</h1>
+        <a href="index.php"><h4 style="text-decoration: none;">Add Student</h4></a>
         <table class="table table-hover table-bordered table sm" style="background-color: rgb(227, 242, 253, 0.7);">
             <tr>
                 <th>Firstname</th>
