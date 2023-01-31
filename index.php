@@ -14,7 +14,7 @@
 <?php
 $firstname=$lastname=$email=$course='';
 $errors=array('firstname'=>'','lastname'=>'','email'=>'','course'=>'');
-if(isset($_POST['save'])){
+if(isset($_POST['submit'])){
     //checking for firstname validation
     if(empty($_POST['firstname'])){
         $errors['firstname']='firstname cannot be empty<br/>';
@@ -120,7 +120,7 @@ if(isset($_POST['save'])){
                  <div class='text-danger'><?php echo $errors['course']?></div>
               </div>
 
-              <button name="save" class="btn btn-primary">Save details</button>
+              <button name="submit" class="btn btn-primary">Save details</button>
       </form>
     </div>
 </body>

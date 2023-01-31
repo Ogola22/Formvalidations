@@ -10,7 +10,7 @@
    
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom p-2">
+<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom p-2 position-fixed">
   <div class="container-md">
     <h4 style="color:coral;">SavanahDevs</h4>
   </div>
@@ -24,7 +24,7 @@
   <a class="navbar-brand" href="contact.php">Contact</a>
   </div>
 </nav>
-<div class="nav justify-content-center">
+<div class="nav justify-content-end">
 <ul class="nav justify-content-center border-bottom p-0 bg-light font-weight-bold">
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="home.php">Home</a>

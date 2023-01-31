@@ -11,25 +11,25 @@
    
 </head>
 <?php
-$email=$password='';
-$errors=array('email'=>'','password'=>'');
-if(isset($_POST['submit'])){
+$Email=$Paswd='';
+$errors=array('Email'=>'','Paswd'=>'');
+if(isset($_POST['sign'])){
     //checking for username validation
-    if(empty($_POST['email'])){
-        $errors['email']='email cannot be empty<br/>';
+    if(empty($_POST['Email'])){
+        $errors['Email']='Email cannot be empty<br/>';
     }else{
-        $email=$_POST['email'];
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $errors['email']='Email must be a valid address';
+        $Email=$_POST['Email'];
+        if(!filter_var($Email, FILTER_VALIDATE_EMAIL)){
+            $errors['Email']='Email must be a valid address';
         }
 
     }
      //checking for password validation
-     if(empty($_POST['password'])){
+     if(empty($_POST['Paswd'])){
         $errors['password'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ]='lastname cannot be empty<br/>';
     }else{
-        $password=$_POST['password'];
-        if(!preg_match('/^[a-zA-Z\s]+$/',$password)){
+        $Paswd=$_POST['Paswd'];
+        if(!preg_match('/^[a-zA-Z\s]+$/',$Paswd)){
             $errors['password']='password must be letters and spaces only';
         }
 
@@ -46,11 +46,11 @@ if(isset($_POST['submit'])){
     }
     try
         {
-            $query = "INSERT INTO signupTB(email, password) VALUES(:email, :password);";
+            $query = "INSERT INTO signuptb(Email, Paswd) VALUES(:Email, :Paswd);";
             $query_run = $databaseConnection -> prepare($query);
             $data =[
-                ":email" => $email,
-                ":password" => password_hash($password, PASSWORD_BCRYPT);
+                ":Email" => $Email,
+                ":Paswd" => password_hash($Paswd, PASSWORD_BCRYPT)
                 
             ];
             $query_execute = $query_run -> execute($data);
@@ -75,19 +75,19 @@ if(isset($_POST['submit'])){
               <div class="form-group">
                  <label>Username</label><br>
                  <input type="email" placeholder="Enter username" name="email" class="form-control"
-                 value="<?php echo htmlspecialchars($email);?>"><br>
-                 <div class='text-danger'><?php echo $errors['email']?>
+                 value="<?php echo htmlspecialchars($Email);?>"><br>
+                 <div class='text-danger'><?php echo $errors['Email']?>
                 </div>
 
               </div>     
               <div class="form-group">
                  <label>Password</label><br>
                  <input type="password"  placeholder=" Enter password" name="password" class="form-control"
-                 value="<?php echo $password?>"><br>
-                 <div class='text-danger'><?php echo $errors['password']?></div>
+                 value="<?php echo $Paswd?>"><br>
+                 <div class='text-danger'><?php echo $errors['Paswd']?></div>
 
               </div>
-              <button name="submit" class="btn btn-primary">Sign up</button>
+              <button name="sign" class="btn btn-primary">Sign up</button>
       </form>
 </div>
 </body>
