@@ -89,7 +89,11 @@ if(isset($_POST['submit'])){
 }
 ?>
 <body>
-    <a href="students.php"><h4 style="text-decoration: none; margin-top: 30px; padding-left: 120px;">Table list</h4></a>
+<ul class="nav justify-content-center bg-light font-weight-bold">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="students.php">List</a>
+  </li>
+</ul>
     <div class="col-md-4 offset-md-4 flex-fill">
         <h5 style="color: blue; margin-top: 30px; ">Enter Details</h5>
       <form action="index.php" method="POST">
