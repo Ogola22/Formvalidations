@@ -11,30 +11,30 @@
    
 </head>
 <?php
-$Email=$Paswd='';
-$errors=array('Email'=>'','Paswd'=>'');
+$email=$password='';
+$errors=array('email'=>'','password'=>'');
 if(isset($_POST['sign'])){
     
     //checking for email validation
-    if(empty($_POST['Email'])){
-        $errors['Email']='Email cannot be empty<br/>';
+    if(empty($_POST['email'])){
+        $errors['email']='Email cannot be empty<br/>';
     }else{
-        $Email=$_POST['Email'];
-        if(!filter_var($Email, FILTER_VALIDATE_EMAIL)){
-            $errors['Email']='email must be a valid address';
+        $email=$_POST['email'];
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $errors['email']='email must be a valid address';
         }
     }
     //checking for password validation
-    if(empty($_POST['Paswd'])){
-        $errors['Paswd']='Password cannot be empty<br/>';
+    if(empty($_POST['password'])){
+        $errors['password']='Password cannot be empty<br/>';
     }else{
-        $Paswd=$_POST['Paswd'];
-        $uppercase = preg_match('@[A-Z]@', $Paswd);
-        $lowercase = preg_match('@[a-z]@', $Paswd);
-        $number    = preg_match('@[0-9]@', $Paswd);
-        $specialChars = preg_match('@[^\w]@', $Paswd);
+        $password=$_POST['password'];
+        $uppercase = preg_match('@[A-Z]@', $password);
+        $lowercase = preg_match('@[a-z]@', $password);
+        $number    = preg_match('@[0-9]@', $password);
+        $specialChars = preg_match('@[^\w]@', $password);
 
-        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($Paswd) < 8) {
+        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
             echo 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.';
         }else{
             echo 'Strong password.';
@@ -50,11 +50,11 @@ if(isset($_POST['sign'])){
             $statement ->execute();*/
             try
             {
-                $query = "INSERT INTO signup (Email, Paswd) VALUES (:email,:password)";
+                $query = "INSERT INTO signup (email, password) VALUES (:email,:password)";
                 $query_run = $databaseConnection ->prepare($query);
                 $data = [
-                    ':email' => $Email,
-                    ':password' => password_hash($Paswd, PASSWORD_BCRYPT)
+                    ':email' => $email,
+                    ':password' => password_hash($password, PASSWORD_BCRYPT)
                 ];
                 $query_execute = $query_run-> execute($data);
                 if($query_execute){
