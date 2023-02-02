@@ -50,7 +50,7 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($Paswd) < 
             $statement ->execute();*/
             try
             {
-                $query = "INSERT INTO signupth (Email, Paswd) VALUES (:email,:password)";
+                $query = "INSERT INTO signuptb (Email, Paswd) VALUES (:email,:password)";
                 $query_run = $databaseConnection ->prepare($query);
                 $data = [
                     ':email' => $Email,
