@@ -30,15 +30,15 @@ if(isset($_POST['sign'])){
     }else{
         $Paswd=$_POST['Paswd'];
         $uppercase = preg_match('@[A-Z]@', $Paswd);
-$lowercase = preg_match('@[a-z]@', $Paswd);
-$number    = preg_match('@[0-9]@', $Paswd);
-$specialChars = preg_match('@[^\w]@', $Paswd);
+        $lowercase = preg_match('@[a-z]@', $Paswd);
+        $number    = preg_match('@[0-9]@', $Paswd);
+        $specialChars = preg_match('@[^\w]@', $Paswd);
 
-if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($Paswd) < 8) {
-    echo 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.';
-}else{
-    echo 'Strong password.';
-}
+        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($Paswd) < 8) {
+            echo 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.';
+        }else{
+            echo 'Strong password.';
+        }
     }
     if(array_filter($errors)){
         //echo 'there are errors in the form';
@@ -50,11 +50,11 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($Paswd) < 
             $statement ->execute();*/
             try
             {
-                $query = "INSERT INTO signuptb (Email, Paswd) VALUES (:email,:password)";
+                $query = "INSERT INTO signup (Email, Paswd) VALUES (:email,:password)";
                 $query_run = $databaseConnection ->prepare($query);
                 $data = [
                     ':email' => $Email,
-                    ':password' => $Paswd,
+                    ':password' => password_hash($Paswd, PASSWORD_BCRYPT)
                 ];
                 $query_execute = $query_run-> execute($data);
                 if($query_execute){
@@ -63,7 +63,7 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($Paswd) < 
                     echo '<script> alert("Data NOT added Successfully")</script>';
                 }
             }catch(PDOException $err){
-                echo $err->getmessage();
+                echo $err->getMessage();
             }
     }
 
