@@ -79,7 +79,7 @@ if(isset($_POST['sign'])){
                  <label>Username</label><br>
                  <input type="email" placeholder="Enter username" name="email" class="form-control"
                  value="<?php echo $Email?>"><br>
-                 <div class='text-danger'><?php echo $errors['Email']?>
+                 <div class='text-danger'><?php echo $errors['email']?>
                 </div>
 
               </div>     
@@ -87,7 +87,7 @@ if(isset($_POST['sign'])){
                  <label>Password</label><br>
                  <input type="password"  placeholder=" Enter password" name="password" class="form-control"
                  value="<?php echo $Paswd?>"><br>
-                 <div class='text-danger'><?php echo $errors['Paswd']?></div>
+                 <div class='text-danger'><?php echo $errors['password']?></div>
 
               </div>
               <button name="sign" class="btn btn-primary">Sign up</button>
