@@ -35,7 +35,7 @@ if(isset($_POST['sign'])){
         $specialChars = preg_match('@[^\w]@', $password);
 
         if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
-            echo 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.';
+            echo '<script> alert ("Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.")</script>';
         }else{
             echo 'Strong password.';
         }
@@ -78,7 +78,7 @@ if(isset($_POST['sign'])){
       <div class="form-group">
                  <label>Username</label><br>
                  <input type="email" placeholder="Enter username" name="email" class="form-control"
-                 value="<?php echo $Email?>"><br>
+                 value="<?php echo $email?>"><br>
                  <div class='text-danger'><?php echo $errors['email']?>
                 </div>
 
@@ -86,7 +86,7 @@ if(isset($_POST['sign'])){
               <div class="form-group">
                  <label>Password</label><br>
                  <input type="password"  placeholder=" Enter password" name="password" class="form-control"
-                 value="<?php echo $Paswd?>"><br>
+                 value="<?php echo $password?>"><br>
                  <div class='text-danger'><?php echo $errors['password']?></div>
 
               </div>
