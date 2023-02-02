@@ -9,7 +9,7 @@ $dsn="mysql:host=$host;dbname=$database;";
 try {
     $databaseConnection=new PDO($dsn,$username,$password);
     $databaseConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //echo'<script> alert("connection to the database has  been successful")</script>';
+    echo'<script> alert("connection to the database has  been successful")</script>';
     
 
 }catch (PDOException $err) {

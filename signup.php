@@ -13,7 +13,7 @@
 <?php
 $Email=$Paswd='';
 $errors=array('Email'=>'','Paswd'=>'');
-if(isset($_POST['save'])){
+if(isset($_POST['sign'])){
     
     //checking for email validation
     if(empty($_POST['Email'])){
@@ -90,7 +90,7 @@ if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($Paswd) < 
                  <div class='text-danger'><?php echo $errors['Paswd']?></div>
 
               </div>
-              <button name="save" class="btn btn-primary">Sign up</button>
+              <button name="sign" class="btn btn-primary">Sign up</button>
       </form>
 </div>
 </body>
