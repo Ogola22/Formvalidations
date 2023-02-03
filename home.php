@@ -49,6 +49,7 @@
     </div>
   </div>
 </div>
+<?php include("services.php")?>
 <?php include("footer.php")?>
 </body>
 </html>
